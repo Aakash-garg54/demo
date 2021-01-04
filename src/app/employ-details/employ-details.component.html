@@ -1,0 +1,17 @@
+<h3>Click here to edit</h3>
+
+<div class = "det" *ngIf = "details">
+    <h4>You have selected : <br><br> Name : {{details.name}} <br>Phone No. : {{details.phn}}</h4>
+    <table style="width: 100%">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" [(ngModel)] = "details.name"></td>
+        </tr>
+        <tr>
+            <td>Phone No.:</td>
+            <td><input type="text" [(ngModel)] = "details.phn"></td>
+        </tr>
+    </table>
+    <button (click) = "save()"> Save </button>
+    <button (click) = "goBack()"> Back </button> 
+</div>   

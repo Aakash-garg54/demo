@@ -1,0 +1,14 @@
+<h1>Employee - List</h1>
+
+<div class = "parent">
+    <ul>
+        <li *ngFor = "let i of details">
+            <a routerLink = "/employee-detail/{{i.id}}" style="text-decoration:none;" > 
+                {{ i.name }} - {{ i.phn }}
+            </a>
+        </li>
+    </ul>
+    <!-- <app-employ-details [details] = "det"></app-employ-details> -->
+</div>
+
+

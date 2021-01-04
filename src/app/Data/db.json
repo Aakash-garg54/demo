@@ -1,0 +1,19 @@
+{
+  "empolyeeDetails": [
+    {
+      "id": 1,
+      "name": "ABC",
+      "phn": "123"
+    },
+    {
+      "id": 2,
+      "name": "CDRE",
+      "phn": 456
+    },
+    {
+      "id": 3,
+      "name": "Aakash",
+      "phn": 789
+    }
+  ]
+}

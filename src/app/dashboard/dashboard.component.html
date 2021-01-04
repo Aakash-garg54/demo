@@ -1,0 +1,70 @@
+<h1>Top Empolyees</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone No.</th>
+            <th>Edit</th>
+        </tr>
+        <tr *ngFor = "let i of getFiveValue">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.phn }}</td>
+            <td><a routerLink = "/employee-detail/{{i.id}}" style="text-decoration:none;" >Edit</a></td>
+        </tr>
+    </table>
+</div>
+<br><br>
+<nav>
+    <button class = "button button1" style="text-align: center;" (click) = 'show="true";searchShow="";delShow=""'>Add a new person</button>
+    <button class = "button button1" style="text-align: center;" (click) = 'searchShow="true";delShow="";show=""'>Search a person</button>
+    <button class = "button button1" style="text-align: center;" (click) = 'delShow="true";searchShow="";show=""'>Delete person</button>
+</nav>
+<div *ngIf = 'show'> 
+    <h4>Add your details here</h4>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" #name placeholder="Enter your name"></td>
+        </tr>
+        <tr>
+            <td>Phone No.</td>
+            <td><input #phone type="text" placeholder="Enter the Phone No."></td>
+        </tr>
+        <tr>
+            <button (click) = "add(name.value, phone.value);name.value = '';phone.value = '';" >Add</button>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf = 'delShow'> 
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input type="text" #id placeholder="Enter the id which is to be deleted"></td>
+        </tr>
+        <tr>
+            <button (click) = "delete(id.value);id.value = ''" >Delete</button>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf = "searchShow"> <br><br>
+    <input type="text" #search placeholder="Enter the Name">
+    <button (click) = "searchValue(search.value)">Search</button>
+    <br><br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        <tr *ngFor = "let i of result" >
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.phn}}</td>
+        </tr>
+    </table>
+</div>
